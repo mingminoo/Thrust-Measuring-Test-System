@@ -34,9 +34,14 @@ if __name__ == '__main__':
     for p in ports:
         print(p)
 
+    print('Choose the serial port:')
+    #selport = str(input())
+    selport = input()
+
     # port OPEN
     serialcomm = serial.Serial()
-    serialcomm.port = 'COM1'
+    #serialcomm.port = 'COM1'
+    serialcomm.port = selport
     serialcomm.baudrate = 9600
     serialcomm.timeout = 0.5
     serialcomm.open()
@@ -44,7 +49,8 @@ if __name__ == '__main__':
     # Open Serial Comm.
     # ser = serial.Serial('COM1', 9600)
 
-    print_hi('PyCharm')
+    serialcomm.close()
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
@@ -66,6 +72,6 @@ if __name__ == '__main__':
 
 
 
-sendData(0x22, 0x44)
 
-serialInst.close()
+
+
